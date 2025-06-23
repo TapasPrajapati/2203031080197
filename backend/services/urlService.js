@@ -1,0 +1,11 @@
+const { nanoid } = require('nanoid');
+
+const createShortUrl = async (originalUrl) => {
+  const shortId = nanoid(8); 
+  const url = new Url({
+    originalUrl,
+    shortId
+  });
+  await url.save();
+  return url;
+};
